@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Equation Solver</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Logical Equation Solver</h1>
+    <a href="https://www.geniol.com.br/logica/equacoes-logicas/#game" target="_blank">Logic Equations for tests</a>
+    <div>
+        <section>
+            <h2>Operators:</h2>
+            <ul>
+                <li><b>+</b> &#8594 Addition</li>
+                <li><b>-</b> &#8594 Subtraction</li>
+                <li><b>*</b> &#8594 Multiplication</li>
+                <li><b>//</b> &#8594 Integer division</li>
+                <li><b>%</b> &#8594 Modulo</li>
+                <li><b>**</b> &#8594 Power</li>
+                <li><b>==</b> &#8594 Equal</li>
+                <li><b>!=</b> &#8594 Not equal</li>
+                <li><b>></b> &#8594 Greater than</li>
+                <li><b><</b> &#8594 Less than</li>
+                <li><b>>=</b> &#8594 Greater than or equal</li>
+                <li><b><=</b> &#8594 Less than or equal</li>
+            </ul>
+        </section>
+        <section>
+            <form action="/" method="post">
+                <label for="expressoes">Expression:</label>
+                <input type="text" id="expressoes" name="expressoes">
+                <span><button type="submit" name="botao" value="0">Add expression</button></span>
+                <label for="tamanho">Size:</label>
+                <input type="number" id="tamanho" name="tamanho">
+                <span>
+                    <button type="submit" name="botao" value="1">Solve</button>
+                </span>
+            </form>
+        </section>
+        <section id="expressoes">
+            <h1>Added expressions:</h1>
+            <table>
+                <tr><th>Index</th><th>Expression</th></tr>
+                {% for expressao in expressoes %}
+                <tr><td>{{ expressoes.index(expressao) }}</td><td>{{ expressao }}</td></tr>
+                {% endfor %}
+            </table>
+            <form action="/" method="post">
+                <span>
+                    <label for="indice">Index:</label>
+                    <input type="number" id="indice" name="indice">
+                </span>
+                <span><button type="submit" name="botao" value="2">Remove expression</button></span>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
